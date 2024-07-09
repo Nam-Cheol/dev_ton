@@ -11,5 +11,10 @@
 	<classpathentry kind="lib" path="lib/kotlin-stdlib-2.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/lombok.jar"/>
 	<classpathentry kind="lib" path="lib/gson-2.8.6.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
