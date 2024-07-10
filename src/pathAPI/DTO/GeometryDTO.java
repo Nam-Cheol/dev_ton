@@ -1,5 +1,6 @@
 package pathAPI.DTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
@@ -7,5 +8,5 @@ import lombok.Data;
 @Data
 public class GeometryDTO {
     private String type;
-    private List<List<Double>> coordinates;
+    private List<List<Double>> coordinates = new ArrayList<>();
 }
