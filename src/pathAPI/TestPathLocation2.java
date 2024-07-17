@@ -1,6 +1,8 @@
 package pathAPI;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,17 +16,31 @@ import okhttp3.Response;
 import pathAPI.DTO.WalkerPathDTO;
 import pathAPI.newDto.PathDTO;
 
-public class TestPathLocation {
+public class TestPathLocation2 {
 
     public static void main(String[] args) throws IOException {
     	
+    	Scanner sc = new Scanner(System.in);
+		String departure = sc.nextLine();
+		System.out.println("출발지를 입력하세요");
+		String arrive = sc.nextLine();
+		System.out.println("도착지를 입력하세요");
+		System.out.println("출발지 : " + departure + "\n" + "도착지 : " + arrive);
+    	
+		List<String> start = Destination.getLatLon(departure);
+		List<String> end = Destination.getLatLon(arrive);
+		
         OkHttpClient client = new OkHttpClient();
 
         WalkerPathDTO dto = new WalkerPathDTO();
-        dto.setStartX(129.06018048);
-        dto.setStartY(35.15960017);
-        dto.setEndX(129.05665309);
-        dto.setEndY(35.15685041);
+        try {
+        	dto.setStartX(Double.parseDouble(start.get(0)));
+        	dto.setStartY(Double.parseDouble(start.get(1)));
+        	dto.setEndX(Double.parseDouble(end.get(0)));
+        	dto.setEndY(Double.parseDouble(end.get(1)));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String walkerStr = gson.toJson(dto);
