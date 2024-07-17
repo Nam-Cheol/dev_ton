@@ -21,10 +21,10 @@ public class TestPathLocation2 {
     public static void main(String[] args) throws IOException {
     	
     	Scanner sc = new Scanner(System.in);
+    	System.out.println("출발지를 입력하세요");
 		String departure = sc.nextLine();
-		System.out.println("출발지를 입력하세요");
-		String arrive = sc.nextLine();
 		System.out.println("도착지를 입력하세요");
+		String arrive = sc.nextLine();
 		System.out.println("출발지 : " + departure + "\n" + "도착지 : " + arrive);
     	
 		List<String> start = Destination.getLatLon(departure);
@@ -34,10 +34,10 @@ public class TestPathLocation2 {
 
         WalkerPathDTO dto = new WalkerPathDTO();
         try {
-        	dto.setStartX(Double.parseDouble(start.get(0)));
-        	dto.setStartY(Double.parseDouble(start.get(1)));
-        	dto.setEndX(Double.parseDouble(end.get(0)));
-        	dto.setEndY(Double.parseDouble(end.get(1)));
+        	dto.setStartX(Double.parseDouble(start.get(1)));
+        	dto.setStartY(Double.parseDouble(start.get(0)));
+        	dto.setEndX(Double.parseDouble(end.get(1)));
+        	dto.setEndY(Double.parseDouble(end.get(0)));
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
