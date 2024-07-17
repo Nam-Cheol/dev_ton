@@ -1,4 +1,4 @@
-package pathAPI.DTO;
+package pathAPI.newDto;
 
 import java.util.List;
 

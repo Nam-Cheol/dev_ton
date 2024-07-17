@@ -3,7 +3,6 @@ package pathAPI;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,7 +10,7 @@ import com.google.gson.GsonBuilder;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import pathAPI.DTO.AddressDTO;
+import pathAPI.newDto.AddressDTO;
 
 public class Destination {
 
